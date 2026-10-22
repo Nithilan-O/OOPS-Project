@@ -2,4 +2,4 @@
 
 using namespace std;
 
-int main(){	MetroService service;	service.run();	return 0;}
+int main(){	MetroService service;	service.run_service();	return 0;}

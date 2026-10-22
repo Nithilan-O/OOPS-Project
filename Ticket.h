@@ -19,12 +19,12 @@ public:
     Ticket();
     Ticket(int ticketId, const string& passenger, const Station& from,
            const Station& to, const Metro& metro, int intervals);
-    int getId() const;
-    double getFare() const;
-    bool isValid() const;
+    int get_id() const;
+    double get_fare() const;
+    bool is_valid() const;
     bool operator==(const Ticket& other) const;
     bool operator<(const Ticket& other) const;
-    void display(ostream& output) const;
+    void display_ticket(ostream& output) const;
 };
 
 ostream& operator<<(ostream& output, const Ticket& ticket);

@@ -14,12 +14,12 @@ private:
 public:
     Station();
     Station(int stationId, const string& stationName, double position);
-    int getId() const;
-    const string& getName() const;
-    double getPositionKm() const;
-    bool setId(int stationId);
-    bool setName(const string& stationName);
-    bool setPositionKm(double position);
+    int get_id() const;
+    const string& get_name() const;
+    double get_position_km() const;
+    bool set_id(int stationId);
+    bool set_name(const string& stationName);
+    bool set_position_km(double position);
 };
 
 ostream& operator<<(ostream& output, const Station& station);

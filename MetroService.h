@@ -12,16 +12,16 @@ class MetroService {
         Ticket tickets[100];
         int ticketCount;
         int nextTicketId;
-        bool readNumber(const string& prompt, int& value) const;
-        void displayStations() const;
-        void displayMetros() const;
-        void bookTicket();
-        void displayTicket() const;
-        void compareTickets() const;
-        int findTicket(int id) const;
+        bool read_number(const string& prompt, int& value) const;
+        void display_stations() const;
+        void display_metros() const;
+        void book_ticket();
+        void display_ticket() const;
+        void compare_tickets() const;
+        int find_ticket(int id) const;
     public:
         MetroService();
-        void run();
+        void run_service();
 };
 
 #endif

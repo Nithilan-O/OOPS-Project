@@ -17,13 +17,13 @@ public:
     Route(const Route& other);
     Route& operator=(const Route& other);
     ~Route();
-    const string& getName() const;
-    int getCount() const;
-    bool addStation(const Station& station);
-    bool getStation(int index, Station& result) const;
-    int findStation(int stationId) const;
-    double journeyDistance(int sourceId, int destinationId) const;
-    int stationsTravelled(int sourceId, int destinationId) const;
+    const string& get_name() const;
+    int get_count() const;
+    bool add_station(const Station& station);
+    bool get_station(int index, Station& result) const;
+    int find_station(int stationId) const;
+    double journey_distance(int sourceId, int destinationId) const;
+    int stations_travelled(int sourceId, int destinationId) const;
 };
 
 ostream& operator<<(ostream& output, const Route& route);
