@@ -2,25 +2,27 @@
 #define STATION_H
 
 #include <iostream>
-#include <string>
+#include <string>
+
+using namespace std;
 
 class Station {
 private:
     int id;
-    std::string name;
+    string name;
     double positionKm;
 public:
     Station();
-    Station(int stationId, const std::string& stationName, double position);
+    Station(int stationId, const string& stationName, double position);
     int getId() const;
-    const std::string& getName() const;
+    const string& getName() const;
     double getPositionKm() const;
     bool setId(int stationId);
-    bool setName(const std::string& stationName);
+    bool setName(const string& stationName);
     bool setPositionKm(double position);
 };
 
-std::ostream& operator<<(std::ostream& output, const Station& station);
-std::istream& operator>>(std::istream& input, Station& station);
+ostream& operator<<(ostream& output, const Station& station);
+istream& operator>>(istream& input, Station& station);
 
 #endif

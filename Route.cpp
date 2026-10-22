@@ -1,8 +1,10 @@
 #include "Route.h"
-#include <cmath>
+#include <cmath>
+
+using namespace std;
 
 Route::Route() : name("Unnamed route"), stations(new Station[10]), count(0), capacity(10) {}
-Route::Route(const std::string& routeName, int maximumStations)
+Route::Route(const string& routeName, int maximumStations)
     : name(routeName.empty() ? "Unnamed route" : routeName),
       stations(new Station[maximumStations > 0 ? maximumStations : 10]),
       count(0), capacity(maximumStations > 0 ? maximumStations : 10) {}
@@ -23,7 +25,7 @@ Route& Route::operator=(const Route& other) {
     return *this;
 }
 Route::~Route() { delete[] stations; }
-const std::string& Route::getName() const { return name; }
+const string& Route::getName() const { return name; }
 int Route::getCount() const { return count; }
 bool Route::addStation(const Station& station) {
     if (count == capacity || station.getId() <= 0 || findStation(station.getId()) >= 0) return false;
@@ -45,7 +47,7 @@ double Route::journeyDistance(int sourceId, int destinationId) const {
     int source = findStation(sourceId);
     int destination = findStation(destinationId);
     if (source < 0 || destination < 0 || source == destination) return -1;
-    return std::fabs(stations[source].getPositionKm() - stations[destination].getPositionKm());
+    return fabs(stations[source].getPositionKm() - stations[destination].getPositionKm());
 }
 int Route::stationsTravelled(int sourceId, int destinationId) const {
     int source = findStation(sourceId);
@@ -53,7 +55,7 @@ int Route::stationsTravelled(int sourceId, int destinationId) const {
     if (source < 0 || destination < 0 || source == destination) return -1;
     return source > destination ? source - destination : destination - source;
 }
-std::ostream& operator<<(std::ostream& output, const Route& route) {
+ostream& operator<<(ostream& output, const Route& route) {
     output << route.getName() << " (both directions)\n";
     for (int i = 0; i < route.getCount(); ++i) {
         Station station;

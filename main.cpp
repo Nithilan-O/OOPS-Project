@@ -1,4 +1,6 @@
-#include "MetroService.h"
+#include "MetroService.h"
+
+using namespace std;
 
 int main() {
     MetroService service;
