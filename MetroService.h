@@ -9,13 +9,10 @@ class MetroService {
     private:
         Route route;
         Metro regular;
-        Metro express;
-        Metro airport;
         Ticket tickets[100];
         int ticketCount;
         int nextTicketId;
         bool readNumber(const string& prompt, int& value) const;
-        const Metro* selectMetro(int choice) const;
         void displayStations() const;
         void displayMetros() const;
         void bookTicket();

@@ -10,10 +10,9 @@ private:
     int trainNumber;
     int capacity;
     bool operating;
-    int serviceType;
 public:
     Metro();
-    Metro(int number, int passengerCapacity, int type);
+    Metro(int number, int passengerCapacity);
     int getTrainNumber() const;
     int getCapacity() const;
     bool isOperating() const;
