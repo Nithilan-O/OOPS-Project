@@ -1,76 +1,27 @@
 #include "Ticket.h"
-#include <cmath>
-#include <iomanip>
-
+#include <iostream>
 using namespace std;
-
 Ticket::Ticket()
-    : id(0), passengerName("Unassigned"), metroType("Unassigned"),
-      distance(0), fare(0), stationIntervals(0)
+: id(0),passenger_name("Unassigned"),distance(0),fare(0),station_intervals(0)
 {
 }
-
-Ticket::Ticket(int ticketId, const string& passenger, const Station& from,
-               const Station& to, const Metro& metro, int intervals) : Ticket()
+Ticket::Ticket(int ticket_id,const string& passenger,const Station& from,
+const Station& to,double journey_distance,double ticket_fare,int intervals):Ticket()
 {
-	double journey = fabs(from.get_position_km() - to.get_position_km());
-	if (ticketId <= 0 || passenger.find_first_not_of(" \t\r\n") == string::npos ||
-		from.get_id() <= 0 || to.get_id() <= 0 || from.get_id() == to.get_id() ||
-		journey <= 0 || intervals <= 0 || !metro.is_operating()) return;
-	id = ticketId;
-	passengerName = passenger;
-	source = from;
-	destination = to;
-	metroType = metro.get_type();
-	distance = journey;
-	fare = metro.calculate_fare(distance);
-	stationIntervals = intervals;
+	id=ticket_id;
+	passenger_name=passenger;
+	source=from;
+	destination=to;
+	distance=journey_distance;
+	fare=ticket_fare;
+	station_intervals=intervals;
 }
-
 int Ticket::get_id() const
 {
 	return id;
 }
-
-double Ticket::get_fare() const
+ostream& operator<<(ostream& output,const Ticket& ticket)
 {
-	return fare;
-}
-
-bool Ticket::is_valid() const
-{
-	return id > 0;
-}
-
-bool Ticket::operator==(const Ticket& other) const
-{
-	return is_valid() && other.is_valid() && id == other.id;
-}
-
-bool Ticket::operator<(const Ticket& other) const
-{
-	return fare < other.fare;
-}
-
-void Ticket::display_ticket(ostream& output) const
-{
-	if (!is_valid()) {
-		output << "No ticket issued.\n";
-		return;
-	}
-	ios::fmtflags previousFlags = output.flags();
-	streamsize previousPrecision = output.precision();
-	output << fixed << setprecision(2)
-		<< "Ticket ID: " << id << "\nPassenger: " << passengerName
-		<< "\nFrom: " << source.get_name() << "\nTo: " << destination.get_name()
-		<< "\nMetro type: " << metroType << "\nDistance: " << distance
-		<< " km\nStation intervals: " << stationIntervals << "\nFare: INR " << fare << '\n';
-	output.flags(previousFlags);
-	output.precision(previousPrecision);
-}
-
-ostream& operator<<(ostream& output, const Ticket& ticket)
-{
-	ticket.display_ticket(output);
+	output<<"Ticket ID: "<<ticket.id<<endl<<"Passenger: "<<ticket.passenger_name<<endl<<"From: "<<ticket.source.get_name()<<endl<<"To: "<<ticket.destination.get_name()<<endl<<"Distance: "<<ticket.distance<<" km"<<endl<<"Station intervals: "<<ticket.station_intervals<<endl<<"Fare: INR "<<ticket.fare<<endl;
 	return output;
 }

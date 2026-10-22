@@ -22,6 +22,6 @@ The single line is named Metro Line. It runs in both directions between these st
 | B | 5 km |
 | C | 10 km |
 
-The Regular service stops at all three stations. Its fare is INR 10 plus INR 2 per kilometre, rounded to two decimal places. To book a ticket, select `4`, enter the source and destination stop IDs (`1` for A, `2` for B, `3` for C), then enter the passenger name. Select `5` to display tickets, `6` to compare fares, and `0` to exit.
+The Regular service stops at all three stations. Its fare is INR 10 plus INR 2 per kilometre, rounded to two decimal places. To book a ticket, select `4`, enter the source and destination stop IDs (`1` for A, `2` for B, `3` for C), then enter the passenger name. Select `5` to display tickets and `0` to exit.
 
 All tickets are kept in memory for the current run, up to 100 tickets. IDs start at 1001.
