@@ -7,7 +7,7 @@ A beginner C++11 console project with one metro line, three stops (A, B, and C),
 From the project folder:
 
 ```sh
-g++ -std=c++11 -Wall -Wextra -Wpedantic Station.cpp Route.cpp Metro.cpp Ticket.cpp MetroService.cpp main.cpp -o metro.exe
+g++ -std=c++11 -Wall -Wextra -Wpedantic Station.cpp Route.cpp Metro.cpp Regular.cpp Ticket.cpp MetroService.cpp main.cpp -o metro.exe
 ```
 
 Run `./metro.exe` to start the application.

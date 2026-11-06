@@ -1,13 +1,13 @@
 #ifndef METROSERVICE_H
 #define METROSERVICE_H
 #include "Ticket.h"
-#include "Metro.h"
+#include "Regular.h"
 using namespace std;
 class MetroService
 {
 	private:
 		Route route;
-		Metro regular;
+		Regular regular;
 		Ticket tickets[100];
 		int ticket_count;
 		int next_ticket_id;
