@@ -26,7 +26,8 @@ void MetroService::display_stations() const
 }
 void MetroService::display_metros() const
 {
-	cout<<"1. "<<regular;
+	const Metro& metro=regular;
+	cout<<"1. "<<metro;
 	cout<<"Stops: A; B; C"<<endl;
 }
 void MetroService::book_ticket()
@@ -47,10 +48,11 @@ void MetroService::book_ticket()
 	route.get_station(destination_index,to);
 	double distance=fabs(from.get_position_km()-to.get_position_km());
 	int intervals=abs(destination_index-source_index);
-	cout<<"Journey: "<<distance<<" km, "<<intervals<<" station intervals."<<endl<<"Fare: INR "<<regular.calculate_fare(distance)<<endl<<"Passenger name: ";
+	const Metro& metro=regular;
+	cout<<"Journey: "<<distance<<" km, "<<intervals<<" station intervals."<<endl<<"Fare: INR "<<metro.calculate_fare(distance)<<endl<<"Passenger name: ";
 	string passenger;
 	getline(cin,passenger);
-	Ticket ticket(next_ticket_id,passenger,from,to,distance,regular.calculate_fare(distance),intervals);
+	Ticket ticket(next_ticket_id,passenger,from,to,distance,metro.calculate_fare(distance),intervals);
 	tickets[ticket_count++]=ticket;
 	++next_ticket_id;
 	cout<<"Ticket generated."<<endl<<ticket;

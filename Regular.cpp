@@ -7,6 +7,10 @@ Regular::Regular():Metro()
 Regular::Regular(int no):Metro(no)
 {
 }
+string Regular::get_service_name() const
+{
+	return "Regular";
+}
 string Regular::get_features() const
 {
 	return "Stops at A, B, and C;\nFare is 10 (+ 2 per km)";
@@ -21,6 +25,6 @@ double Regular::calculate_fare(double distance) const
 }
 ostream& operator<<(ostream& output,const Regular& regular)
 {
-	output<<"Regular | Train "<<regular.get_train_no()<<" | "<<(regular.is_operating()?"Operating":"Out of service")<<endl<<regular.get_features()<<endl;
-	return output;
+	const Metro& metro=regular;
+	return output<<metro;
 }

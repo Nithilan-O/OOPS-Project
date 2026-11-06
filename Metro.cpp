@@ -34,6 +34,6 @@ void Metro::set_operating(bool status)
 }
 ostream& operator<<(ostream& output,const Metro& metro)
 {
-	output<<"Train "<<metro.get_train_no()<<" | "<<(metro.is_operating()?"Operating":"Out of service")<<endl;
+	output<<metro.get_service_name()<<" | Train "<<metro.get_train_no()<<" | "<<(metro.is_operating()?"Operating":"Out of service")<<endl<<metro.get_features()<<endl;
 	return output;
 }
