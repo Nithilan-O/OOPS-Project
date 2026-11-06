@@ -14,6 +14,7 @@ class Metro
 		bool is_operating() const;
 		bool set_train_no(int no);
 		void set_operating(bool status);
+		virtual double calculate_fare(double distance) const=0;
 };
 ostream& operator<<(ostream& output,const Metro& metro);
 #endif

@@ -8,7 +8,7 @@ class Regular:public Metro
 		Regular();
 		Regular(int no);
 		string get_features() const;
-		double calculate_fare(double distance) const;
+		double calculate_fare(double distance) const override;
 };
 ostream& operator<<(ostream& output,const Regular& regular);
 #endif
