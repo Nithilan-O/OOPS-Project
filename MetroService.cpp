@@ -100,6 +100,7 @@ void MetroService::run_service()
 		}
 		else if(choice==5)
 		{
+			cout<<"Selected option: 5 (Display tickets)"<<endl;
 			display_ticket();
 		}
 	}

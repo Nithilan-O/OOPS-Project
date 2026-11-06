@@ -22,6 +22,13 @@ int Ticket::get_id() const
 }
 ostream& operator<<(ostream& output,const Ticket& ticket)
 {
-	output<<"Ticket ID: "<<ticket.id<<endl<<"Passenger: "<<ticket.passenger_name<<endl<<"From: "<<ticket.source.get_name()<<endl<<"To: "<<ticket.destination.get_name()<<endl<<"Distance: "<<ticket.distance<<" km"<<endl<<"Station intervals: "<<ticket.station_intervals<<endl<<"Fare: INR "<<ticket.fare<<endl;
+	output<<"Ticket ID: "<<ticket.id<<endl<<"Passenger: "<<ticket.passenger_name<<endl<<"From: "<<ticket.source.get_name()<<endl<<"To: "<<ticket.destination.get_name()<<endl<<"Distance: "<<ticket.distance<<" km"<<endl<<"Station intervals: "<<ticket.station_intervals<<endl;
+	ios::fmtflags previous_flags=output.flags();
+	streamsize previous_precision=output.precision();
+	output.setf(ios::fixed,ios::floatfield);
+	output.precision(2);
+	output<<"Fare: INR "<<ticket.fare<<endl;
+	output.flags(previous_flags);
+	output.precision(previous_precision);
 	return output;
 }
