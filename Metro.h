@@ -10,6 +10,7 @@ class Metro
 	public:
 		Metro();
 		Metro(int no);
+		virtual ~Metro();
 		int get_train_no() const;
 		bool is_operating() const;
 		bool set_train_no(int no);

@@ -11,6 +11,9 @@ Metro::Metro(int no)
 	operating=true;
 	set_train_no(no);
 }
+Metro::~Metro()
+{
+}
 int Metro::get_train_no() const
 {
 	return train_no;
