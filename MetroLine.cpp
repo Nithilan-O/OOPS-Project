@@ -1,4 +1,5 @@
 #include "MetroLine.h"
+#include <stdexcept>
 using namespace std;
 MetroLine::MetroLine(const string& line_name,int maximum_stations)
 : route(line_name,maximum_stations)
@@ -7,9 +8,12 @@ MetroLine::MetroLine(const string& line_name,int maximum_stations)
 MetroLine::~MetroLine()
 {
 }
-bool MetroLine::add_station(Station& station)
+void MetroLine::add_station(Station& station)
 {
-	return route.add_station(station);
+	if(not route.add_station(station))
+	{
+		throw logic_error("Invalid station while configuring "+route.get_name());
+	}
 }
 const Route& MetroLine::get_route() const
 {

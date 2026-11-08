@@ -33,6 +33,10 @@ bool MetroService::read_no(const string& prompt,int& value) const
 	cout<<prompt;
 	if(not (cin>>value))
 	{
+		if(cin.eof() or cin.bad())
+		{
+			return false;
+		}
 		cin.clear();
 		cin.ignore(numeric_limits<streamsize>::max(),'\n');
 		return false;
@@ -185,6 +189,10 @@ void MetroService::book_ticket()
 	if(not read_no("Source station ID: ",source_id) or
 		not read_no("Destination station ID: ",destination_id))
 	{
+		if(cin.eof() or cin.bad())
+		{
+			return;
+		}
 		cout<<"Invalid station selection."<<endl;
 		return;
 	}
@@ -201,6 +209,10 @@ void MetroService::book_ticket()
 	if(not read_no("Ticket type (1. Counter paper, 2. Eligible digital): ",ticket_type) or
 		(ticket_type!=1 and ticket_type!=2))
 	{
+		if(cin.eof() or cin.bad())
+		{
+			return;
+		}
 		cout<<"Invalid ticket type."<<endl;
 		return;
 	}
@@ -252,6 +264,10 @@ void MetroService::run_service()
 		cout<<endl;
 		if(not valid_choice)
 		{
+			if(cin.eof() or cin.bad())
+			{
+				break;
+			}
 			cout<<"Invalid menu choice."<<endl;
 			continue;
 		}

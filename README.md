@@ -25,3 +25,5 @@ Select `4` to book a ticket. The application lists station IDs and line membersh
 ## Fares
 
 Counter paper fare is INR 20 plus INR 5 for each intermediate station stop between the selected source and destination. A same-station or adjacent-station journey has no extra stops and costs INR 20. Eligible digital tickets retain the 20% discount, applied once to the calculated fare.
+
+Unhandled allocation and standard-library exceptions are reported by the application entry point. Invalid menu and station inputs are handled through return-value checks, and end-of-input exits the menu cleanly.

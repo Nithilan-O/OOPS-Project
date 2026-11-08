@@ -8,7 +8,7 @@ class MetroLine
 		Route route;
 	protected:
 		MetroLine(const string& line_name,int maximum_stations);
-		bool add_station(Station& station);
+		void add_station(Station& station);
 	public:
 		virtual ~MetroLine();
 		virtual string get_line_name() const=0;
