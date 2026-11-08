@@ -11,9 +11,6 @@ Metro::Metro(int no)
 	operating=true;
 	set_train_no(no);
 }
-Metro::~Metro()
-{
-}
 int Metro::get_train_no() const
 {
 	return train_no;
@@ -34,6 +31,27 @@ bool Metro::set_train_no(int no)
 void Metro::set_operating(bool status)
 {
 	operating=status;
+}
+string Metro::get_service_name() const
+{
+	return "Regular";
+}
+string Metro::get_features() const
+{
+	return "Blue, Green, and Yellow Lines;\nFare is INR 20 plus INR 5 per extra stop";
+}
+double Metro::calculate_fare(int extra_stops,bool digital) const
+{
+	if(extra_stops<0)
+	{
+		return-1;
+	}
+	int fare=20+5*extra_stops;
+	if(digital)
+	{
+		fare=fare*8/10;
+	}
+	return fare;
 }
 ostream& operator<<(ostream& output,const Metro& metro)
 {

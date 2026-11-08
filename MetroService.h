@@ -1,7 +1,10 @@
 #ifndef METROSERVICE_H
 #define METROSERVICE_H
+#include "Metro.h"
 #include "Ticket.h"
-#include "Regular.h"
+#include "BlueLine.h"
+#include "GreenLine.h"
+#include "YellowLine.h"
 using namespace std;
 class MetroService
 {
@@ -9,8 +12,11 @@ class MetroService
 		static const int station_capacity=25;
 		static const int line_count=3;
 		Station stations[station_capacity];
-		Route routes[line_count];
-		Regular regular;
+		BlueLine blue_line;
+		GreenLine green_line;
+		YellowLine yellow_line;
+		MetroLine* lines[line_count];
+		Metro regular;
 		Ticket tickets[100];
 		int ticket_count;
 		int next_ticket_id;
