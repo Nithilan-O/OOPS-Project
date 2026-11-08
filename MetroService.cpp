@@ -225,7 +225,12 @@ void MetroService::book_ticket()
 	}
 	cout<<endl<<"Passenger name: ";
 	string passenger;
-	getline(cin,passenger);
+	if(not getline(cin,passenger) or
+		passenger.find_first_not_of(" \t\r\n")==string::npos)
+	{
+		cout<<"Passenger name cannot be empty. Ticket was not generated."<<endl;
+		return;
+	}
 	Station from=stations[source_index];
 	Station to=stations[destination_index];
 	Ticket ticket(next_ticket_id,passenger,from,to,fare,route_details,extra_stops,digital);
