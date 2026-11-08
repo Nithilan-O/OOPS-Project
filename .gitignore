@@ -5,3 +5,4 @@
 .tools/
 .zig-cache/
 build/
+VERIFICATION.md

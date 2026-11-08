@@ -81,6 +81,7 @@ void MetroService::display_stations() const
 		}
 		cout<<endl;
 	}
+	cout<<endl;
 }
 void MetroService::display_routes() const
 {
@@ -222,9 +223,7 @@ void MetroService::book_ticket()
 		cout<<"Unable to calculate fare."<<endl;
 		return;
 	}
-	cout<<endl<<"Journey route: "<<route_details<<endl;
-	cout<<"Extra stops: "<<extra_stops<<endl;
-	cout<<"Fare: INR "<<fare<<endl<<"Passenger name: ";
+	cout<<endl<<"Passenger name: ";
 	string passenger;
 	getline(cin,passenger);
 	Station from=stations[source_index];
@@ -232,7 +231,7 @@ void MetroService::book_ticket()
 	Ticket ticket(next_ticket_id,passenger,from,to,fare,route_details,extra_stops,digital);
 	tickets[ticket_count++]=ticket;
 	++next_ticket_id;
-	cout<<"Ticket generated."<<endl<<ticket<<endl;
+	cout<<endl<<"Ticket generated."<<endl<<ticket<<endl;
 }
 void MetroService::display_ticket() const
 {
@@ -249,10 +248,10 @@ void MetroService::display_ticket() const
 }
 void MetroService::run_service()
 {
-	cout<<"Welcome to Chennai Metro Rail Service"<<endl;
+	cout<<"Welcome to On Track"<<endl;
 	while(true)
 	{
-		cout<<endl<<"===== Main Menu ====="<<endl;
+		cout<<endl<<"===== On Track ====="<<endl;
 		cout<<"1. View stations"<<endl;
 		cout<<"2. View metro lines"<<endl;
 		cout<<"3. View metro service"<<endl;

@@ -1,4 +1,4 @@
-# Chennai Metro Rail Service
+# On Track
 
 A beginner C++11 console project with Blue, Green, and operational Yellow metro lines, shared interchange stations, and in-memory ticket booking.
 
@@ -7,10 +7,10 @@ A beginner C++11 console project with Blue, Green, and operational Yellow metro 
 From the project folder:
 
 ```sh
-g++ -std=c++11 -Wall -Wextra -Wpedantic Station.cpp Route.cpp Metro.cpp Regular.cpp Ticket.cpp MetroService.cpp main.cpp -o metro.exe
+g++ -std=c++11 -Wall -Wextra -Wpedantic Station.cpp Route.cpp Metro.cpp Regular.cpp Ticket.cpp MetroService.cpp main.cpp -o OnTrack.exe
 ```
 
-Run `./metro.exe` to start the application.
+Run `./OnTrack.exe` to start the application.
 
 ## Lines and stations
 
