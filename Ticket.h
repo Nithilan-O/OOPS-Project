@@ -9,13 +9,15 @@ class Ticket
 		string passenger_name;
 		Station source;
 		Station destination;
-		double distance;
 		double fare;
-		int station_intervals;
+		string route_details;
+		int extra_stops;
+		bool digital;
 	public:
 		Ticket();
 		Ticket(int ticket_id,const string& passenger,const Station& from,
-			const Station& to,double journey_distance,double ticket_fare,int intervals);
+			const Station& to,double ticket_fare,const string& journey_route,
+			int stops,bool digital_ticket);
 		int get_id() const;
 		friend ostream& operator<<(ostream& output,const Ticket& ticket);
 };

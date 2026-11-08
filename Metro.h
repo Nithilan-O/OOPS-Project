@@ -17,7 +17,7 @@ class Metro
 		void set_operating(bool status);
 		virtual string get_service_name() const=0;
 		virtual string get_features() const=0;
-		virtual double calculate_fare(double distance) const=0;
+		virtual double calculate_fare(int extra_stops,bool digital) const=0;
 };
 ostream& operator<<(ostream& output,const Metro& metro);
 #endif

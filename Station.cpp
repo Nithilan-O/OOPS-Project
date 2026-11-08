@@ -55,7 +55,7 @@ bool Station::set_position_km(double position)
 }
 ostream& operator<<(ostream& output,const Station& station)
 {
-	return output<<station.get_name()<<" ("<<station.get_position_km()<<" km)";
+	return output<<station.get_name();
 }
 istream& operator>>(istream& input,Station& station)
 {

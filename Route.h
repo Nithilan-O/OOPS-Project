@@ -6,7 +6,8 @@ class Route
 {
 	private:
 		string name;
-		Station* stations;
+		// Station objects remain caller-owned and must outlive this route.
+		Station** stations;
 		int count;
 		int capacity;
 	public:
@@ -17,7 +18,7 @@ class Route
 		~Route();
 		const string& get_name() const;
 		int get_count() const;
-		bool add_station(const Station& station);
+		bool add_station(Station& station);
 		bool get_station(int index,Station& result) const;
 		int find_station(int station_id) const;
 };

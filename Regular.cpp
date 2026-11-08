@@ -1,6 +1,6 @@
 #include "Regular.h"
-#include <cmath>
 using namespace std;
+
 Regular::Regular():Metro()
 {
 }
@@ -13,15 +13,20 @@ string Regular::get_service_name() const
 }
 string Regular::get_features() const
 {
-	return "Stops at A, B, and C;\nFare is 10 (+ 2 per km)";
+	return "Blue, Green, and Yellow Lines;\nFare is INR 20 plus INR 5 per extra stop";
 }
-double Regular::calculate_fare(double distance) const
+double Regular::calculate_fare(int extra_stops,bool digital) const
 {
-	if(not isfinite(distance)  or  distance<=0)
+	if(extra_stops<0)
 	{
 		return-1;
 	}
-	return round((10.0+2.0*distance)*100.0)/100.0;
+	int fare=20+5*extra_stops;
+	if(digital)
+	{
+		fare=fare*8/10;
+	}
+	return fare;
 }
 ostream& operator<<(ostream& output,const Regular& regular)
 {
