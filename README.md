@@ -16,7 +16,7 @@ Run `./OnTrack.exe` to start the application.
 
 The application displays the station sequence for each line in both directions. Chennai Central and Alandur are shared by the Blue and Green Lines. Vadapalani is shared by the Green and Yellow Lines. Each shared station has one station ID and one `Station` object referenced by both routes.
 
-`MetroLine` is the abstract base class for `BlueLine`, `GreenLine`, and `YellowLine`. `MetroService` uses `MetroLine` pointers to configure, display, and search the line routes. `Metro` is a concrete Regular service class and no longer uses inheritance for polymorphism.
+`MetroLine` is the abstract base class for `BlueLine`, `GreenLine`, and `YellowLine`. `MetroService` uses `MetroLine` pointers to configure, display, and search the line routes. 
 
 The Yellow Line includes only the operational Poonamallee Bypass to Vadapalani section. Station IDs are assigned consecutively to the stops currently included in the routes.
 
